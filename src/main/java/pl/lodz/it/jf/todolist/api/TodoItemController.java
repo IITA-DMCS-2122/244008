@@ -20,7 +20,7 @@ public class TodoItemController {
         todoItemService.create(todoItem);
     }
 
-    @GetMapping("/{uuid}")
+    @GetMapping("{uuid}")
     public TodoItemProjection getTodoItem(@PathVariable String uuid) {
         return todoItemService.getByUuid(uuid);
     }
@@ -35,7 +35,7 @@ public class TodoItemController {
         todoItemService.update(todoItem);
     }
 
-    @DeleteMapping("/{uuid}")
+    @DeleteMapping("{uuid}")
     public void deleteTodoItem(@PathVariable String uuid) {
         todoItemService.deleteByUuid(uuid);
     }
