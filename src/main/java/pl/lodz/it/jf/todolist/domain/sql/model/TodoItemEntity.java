@@ -26,7 +26,4 @@ public class TodoItemEntity {
     private String description;
 
     private Integer priority;
-
-    @CreationTimestamp
-    private LocalDateTime creationDate;
 }

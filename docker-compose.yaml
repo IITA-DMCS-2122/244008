@@ -9,6 +9,12 @@ services:
       POSTGRES_DB: copypaste
     ports:
       - '5432:5432'
+    deploy:
+      resources:
+        limits:
+          memory: 50M
+        reservations:
+          memory: 20M
     volumes:
       - db:/var/lib/postgresql/data
   mongodb:
@@ -21,6 +27,14 @@ services:
       - "27017:27017"
     volumes:
       - db:/var/lib/mongo/data
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.11.0
+    environment:
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - "xpack.security.enabled=false"
+      - "discovery.type=single-node"
+    ports:
+      - "9200:9200"
 volumes:
   db:
     driver: local

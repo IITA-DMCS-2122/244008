@@ -24,6 +24,4 @@ public class TodoItemDocument {
     private String description;
 
     private Integer priority;
-
-    private LocalDateTime creationDate;
 }

@@ -14,7 +14,6 @@ public class TodoItemDocumentToProjectionConverter {
                 .title(source.getTitle())
                 .description(source.getDescription())
                 .priority(source.getPriority())
-                .creationDate(source.getCreationDate())
                 .build();
     }
 

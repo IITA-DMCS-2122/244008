@@ -1,15 +1,12 @@
 package pl.lodz.it.jf.todolist.composite.converter;
 
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 import pl.lodz.it.jf.todolist.composite.model.TodoItemProjection;
-import pl.lodz.it.jf.todolist.domain.sql.model.TodoItemEntity;
+import pl.lodz.it.jf.todolist.domain.elasticsearch.model.TodoItemES;
 
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class TodoItemEntityToProjectionConverter {
+public class TodoItemESToProjectionConverter {
 
-    public static TodoItemEntity convertFrom(TodoItemProjection source) {
-        return TodoItemEntity.builder()
+    public static TodoItemProjection convertTo(TodoItemES source) {
+        return TodoItemProjection.builder()
                 .uuid(source.getUuid())
                 .title(source.getTitle())
                 .description(source.getDescription())

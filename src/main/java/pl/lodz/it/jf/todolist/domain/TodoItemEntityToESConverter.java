@@ -1,15 +1,13 @@
 package pl.lodz.it.jf.todolist.domain;
 
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
+import pl.lodz.it.jf.todolist.domain.elasticsearch.model.TodoItemES;
 import pl.lodz.it.jf.todolist.domain.nosql.model.TodoItemDocument;
 import pl.lodz.it.jf.todolist.domain.sql.model.TodoItemEntity;
 
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class TodoItemEntityToDocumentConverter {
+public class TodoItemEntityToESConverter {
 
-    public static TodoItemDocument convertTo(TodoItemEntity source) {
-        return TodoItemDocument.builder()
+    public static TodoItemES convertTo(TodoItemEntity source) {
+        return TodoItemES.builder()
                 .id(source.getId())
                 .uuid(source.getUuid())
                 .title(source.getTitle())
@@ -18,7 +16,7 @@ public class TodoItemEntityToDocumentConverter {
                 .build();
     }
 
-    public static TodoItemEntity convertFrom(TodoItemDocument source) {
+    public static TodoItemEntity convertFrom(TodoItemES source) {
         return TodoItemEntity.builder()
                 .id(source.getId())
                 .uuid(source.getUuid())

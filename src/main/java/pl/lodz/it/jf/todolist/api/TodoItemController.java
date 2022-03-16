@@ -2,6 +2,7 @@ package pl.lodz.it.jf.todolist.api;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import pl.lodz.it.jf.todolist.composite.model.TodoItemSearchQuery;
 import pl.lodz.it.jf.todolist.composite.model.TodoItemProjection;
 import pl.lodz.it.jf.todolist.composite.service.TodoItemService;
 
@@ -23,6 +24,11 @@ public class TodoItemController {
     @GetMapping("{uuid}")
     public TodoItemProjection getTodoItem(@PathVariable String uuid) {
         return todoItemService.getByUuid(uuid);
+    }
+
+    @PostMapping("search")
+    public List<TodoItemProjection> search(@RequestBody TodoItemSearchQuery query) {
+        return todoItemService.search(query);
     }
 
     @GetMapping
