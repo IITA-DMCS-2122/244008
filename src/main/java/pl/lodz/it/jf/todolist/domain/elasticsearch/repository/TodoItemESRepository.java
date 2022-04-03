@@ -9,4 +9,7 @@ public interface TodoItemESRepository extends ElasticsearchRepository<TodoItemES
 
     List<TodoItemES> findByDescriptionContains(String desc);
 
+    TodoItemES findByUuid(String uuid);
+
+    void deleteByUuid(String uuid);
 }

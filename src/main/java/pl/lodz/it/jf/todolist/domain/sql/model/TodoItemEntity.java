@@ -1,10 +1,8 @@
 package pl.lodz.it.jf.todolist.domain.sql.model;
 
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Entity
 @Getter

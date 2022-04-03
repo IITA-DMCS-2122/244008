@@ -46,4 +46,9 @@ public class TodoItemController {
         todoItemService.deleteByUuid(uuid);
     }
 
+    @GetMapping("count")
+    public long eventsCount() {
+        return todoItemService.eventsCount();
+    }
+
 }

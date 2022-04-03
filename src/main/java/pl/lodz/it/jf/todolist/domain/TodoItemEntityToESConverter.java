@@ -1,7 +1,6 @@
 package pl.lodz.it.jf.todolist.domain;
 
 import pl.lodz.it.jf.todolist.domain.elasticsearch.model.TodoItemES;
-import pl.lodz.it.jf.todolist.domain.nosql.model.TodoItemDocument;
 import pl.lodz.it.jf.todolist.domain.sql.model.TodoItemEntity;
 
 public class TodoItemEntityToESConverter {

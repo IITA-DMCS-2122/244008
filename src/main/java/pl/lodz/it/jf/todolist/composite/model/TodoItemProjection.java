@@ -2,8 +2,6 @@ package pl.lodz.it.jf.todolist.composite.model;
 
 import lombok.*;
 
-import java.time.LocalDateTime;
-
 @Getter
 @Setter
 @Builder
@@ -18,7 +16,5 @@ public class TodoItemProjection {
     private String description;
 
     private Integer priority;
-
-    private LocalDateTime creationDate;
 
 }
